@@ -106,7 +106,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 0.45rem;
-    color: #333;
+    color: #d00707;
     border-radius: 50%;
     border: 1px solid #333;
     text-decoration: none;
@@ -115,8 +115,8 @@
   }
   
   .social-icon:hover {
-    color: #4481eb;
-    border-color: #4481eb;
+    color: #e12c2c;
+    border-color: #eb8f44;
   }
   
   .btn {
