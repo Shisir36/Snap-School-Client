@@ -4,6 +4,7 @@ import signUpSvg from "../../assets/signUpImage/My project.png"
 import signUpArrow from "../../assets/signUpImage/dbl-arrow.png"
 import AuthProvider, { Authcontext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const [password, setPassword] = useState('');
@@ -59,15 +60,15 @@ const SignUp = () => {
                         <img src={signUpArrow} alt="" />
                     </a>
                 </div>
-                <form onSubmit={handleSignUp} action="" method="">
-                    <div className="form-container slideRight-animation">
+                <form className='signUpForm' onSubmit={handleSignUp} action="" method="">
+                  <div className="form-containers slideRight-animation">
 
                         <h1 className="form-header">
                             Get started
                         </h1>
                         <div className="input-container">
                             <label htmlFor="name"></label>
-                            <input type="text" name="name" id="name" required />
+                            <input className="inputs" type="text" name="name" id="name" required />
                             <span className = "lebelName">
                                 Name
                             </span>
@@ -75,7 +76,7 @@ const SignUp = () => {
 
                         <div className="input-container">
                             <label htmlFor="photo-url"></label>
-                            <input type="text" name="photoURL" id="photo-url" required />
+                            <input className="inputs" type="text" name="photoURL" id="photo-url" required />
                             <span className = "lebelName">
                                 Photo URL
                             </span>
@@ -84,7 +85,7 @@ const SignUp = () => {
                         <div className="input-container">
                             <label htmlFor="mail">
                             </label>
-                            <input type="email" name="email" id="mail" required />
+                            <input className="inputs" type="email" name="email" id="mail" required />
                             <span className = "lebelName">
                                 E-mail
                             </span>
@@ -93,7 +94,7 @@ const SignUp = () => {
 
                         <div className="input-container">
                             <label htmlFor="user-password"></label>
-                            <input type="password" name="password" id="user-password" className="user-password" required />
+                            <input  type="password" name="password" id="user-password" className="user-password inputs" required />
                             <span className = "lebelName">Password</span>
                             <div className="error">{password}</div>
                         </div>
@@ -101,7 +102,7 @@ const SignUp = () => {
                         <div id="btm">
                             <button type="submit" className="submit-btn">Create Account</button>
                             <p className="btm-text">
-                                Already have an account..? <span className="btm-text-highlighted">  Log in</span>
+                                Already have an account..? <Link to='/login' className="btm-text-highlighted">  Log in</Link>
                             </p>
                         </div>
                     </div>
