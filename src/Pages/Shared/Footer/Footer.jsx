@@ -15,11 +15,11 @@ const Footer = () => {
 
     return (
         <div>
-            <footer className="bg-gray-800 py-8">
+            <footer className="bg-gray-800 md:py-8 py-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="text-gray-300">
-                            <NavLink to="/" className=" flex items-center gap-0 mb-2">
+                        <div className="text-gray-300 text-center md:text-left">
+                            <NavLink to="/" className=" flex items-center gap-0 mb-2 ml-10 md:ml-0">
                                 <img src={wbLogo} alt="" className="h-10 w-10" />
                                 <h1 className='font-bold text-3xl'>Snap School</h1>
                             </NavLink>
@@ -32,32 +32,38 @@ const Footer = () => {
                             <p className="text-sm">
                                 Email: info@photographyschool.com
                             </p>
-                            <div className='mt-3 inline-flex space-x-5 text-orange-600 text-2xl items-center'>
-                                <p><FaFacebook /></p>
-                                <p><FaTwitter /></p>
-                                <p><FaInstagram /></p>
-                                <p><FaSkype /></p>
+                            <div className='mt-3 inline-flex space-x-5  text-2xl items-center'>
+                                <p className=' text-blue-500'><FaFacebook /></p>
+                                <p className=' text-sky-400'><FaTwitter /></p>
+                                <p className=' text-red-500'><FaInstagram /></p>
+                                <p className=' text-sky-300'><FaSkype /></p>
                             </div>
                         </div>
-                        <div className="text-gray-300">
-                            <h3 className="text-2xl font-semibold  ">Useful Links</h3> <hr className=" mb-4 mt-2" />
+                        <div className="text-gray-300 md:block hidden">
+                            <h3 className="text-2xl font-semibold  ">Useful Links</h3>
+                            <div className="mt-4 mb-3">
+                                <div className="w-full h-0.5 bg-gradient-to-r from-orange-600 to-black" />
+                            </div>
                             <ul className="space-y-2">
                                 <li>
-                                    <a href="/courses" className="text-sm hover:text-white">Courses</a>
+                                    <a href="/courses" className="text-sm hover:text-orange-700">Courses</a>
                                 </li>
                                 <li>
-                                    <a href="/instructors" className="text-sm hover:text-white">Instructors</a>
+                                    <a href="/instructors" className="text-sm hover:text-orange-700">Instructors</a>
                                 </li>
                                 <li>
-                                    <a href="/blog" className="text-sm hover:text-white">Blog</a>
+                                    <a href="/blog" className="text-sm hover:text-orange-700">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="/contact" className="text-sm hover:text-white">Contact</a>
+                                    <a href="/contact" className="text-sm hover:text-orange-700">Contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div className=' md:block hidden'>
-                            <h3 className="text-2xl font-semibold   text-white">Galleries</h3> <hr className=" mb-4 mt-2" />
+                            <h3 className="text-2xl font-semibold   text-white">Galleries</h3>
+                            <div className="mt-4 mb-3">
+                                <div className="w-full h-0.5 bg-gradient-to-r from-orange-600 to-black" />
+                            </div>
                             <div className="grid grid-cols-3 gap-4">
                                 {galleryImages.map((image, index) => (
                                     <img
@@ -73,7 +79,7 @@ const Footer = () => {
                     <hr className="my-8 border-gray-700" />
                     <div className="mt-8 text-center text-gray-300">
                         <p className="text-sm">
-                            &copy; {new Date().getFullYear()} Photography School. All rights reserved.
+                            &copy; {new Date().getFullYear()} Snap School. All rights reserved.
                         </p>
                     </div>
                 </div>
