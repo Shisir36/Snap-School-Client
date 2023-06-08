@@ -64,8 +64,8 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="my-20">
-            <h1 className=' text-orange-600 text-center text-2xl titles'>Testimonials</h1>
+        <section className="px-3 py-1" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1523878288860-7ad281611901?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80` }}>
+            <h1 className=' text-orange-600 text-center text-2xl titles pt-14 font-bold'>Testimonials</h1>
             <p className=' text-6xl font-bold text-center titles mb-14'>What our students say <br />
                 about courses</p>
             <div className='md:flex justify-evenly gap-16'>
@@ -73,7 +73,7 @@ const Testimonials = () => {
                     <div
                         key={testimonial.id}
                         id={`card-${testimonial.id}`}
-                        className="testimonial-card bg-white rounded-lg shadow-lg p-14 text-center border md:w-[500px] transition-all relative mb-8 "
+                        className="testimonial-card bg-white rounded-lg shadow-lg p-14 text-center  md:w-[500px] transition-all relative mb-8 "
                         onMouseEnter={() => handleMouseEnter(testimonial.id)}
                         onMouseLeave={handleMouseLeave}
                         style={getCardStyles(testimonial.id)}
