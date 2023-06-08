@@ -76,7 +76,7 @@ const SignUp = () => {
 
                         <div className="input-container">
                             <label htmlFor="photo-url"></label>
-                            <input className="inputs" type="text" name="photoURL" id="photo-url" required />
+                            <input className="inputs" type="file" name="photoURL" id="photo-url" required />
                             <span className = "lebelName">
                                 Photo URL
                             </span>

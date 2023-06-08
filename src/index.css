@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=IBM+Plex+Serif:ital@1&family=Instrument+Serif:ital@1&family=Mukta:wght@300&family=Roboto+Condensed:ital,wght@1,300&family=Signika+Negative:wght@300;400&family=Titillium+Web:ital@1&display=swap');
+
+.titles {
+    font-family: 'IBM Plex Serif', serif;
+}
