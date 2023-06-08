@@ -5,8 +5,8 @@ const About = () => {
         <section className="md:flex items-center md:py-20 py-24">
             <div className="relative w-full">
                 <img src="https://images.unsplash.com/photo-1667567469453-878cdf593c9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Big Photo" className="mb-4 md:ml-20 h-[500px] md:w-[40%] rounded-lg" />
-                <img src="https://images.unsplash.com/photo-1543824387-b7359a9e1354?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Small Photo" className="absolute top-[10%] left-[40%] h-[70%] w-1/3 rounded-lg md:block hidden" />
-                <div className="bg-orange-600 text-white md:rounded-lg rounded-md px-1 text-center md:py-10 absolute bottom-0 md:left-72 left-32 md:w-1/4">
+                <img src="https://images.unsplash.com/photo-1543824387-b7359a9e1354?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Small Photo" className="absolute top-[10%] left-[42%] h-[70%] w-[28%] rounded-lg md:block hidden" />
+                <div className="bg-orange-600 text-white md:rounded-lg rounded-md px-1 text-center md:py-10 absolute bottom-0 md:left-72 left-32 md:w-1/5">
                     <p className="text-3xl "><span className=' text-yellow-300 font-extrabold'>16</span> Years of Experience</p>
                 </div>
             </div>

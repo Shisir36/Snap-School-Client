@@ -23,7 +23,6 @@ const AuthProvider = ({ children }) => {
           console.log("Error updating profile: ", error);
         });
     };
-  
     const signIn = (email, password) => {
       return signInWithEmailAndPassword(auth, email, password);
     };

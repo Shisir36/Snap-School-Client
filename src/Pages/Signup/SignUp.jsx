@@ -8,47 +8,57 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const [emailError, setEmailError] = useState('');
     const { createUser, updateUserProfile } = useContext(Authcontext);
     const [formVisible, setFormVisible] = useState(false);
-  
+
     useEffect(() => {
-      setFormVisible(true);
+        setFormVisible(true);
     }, []);
-  
+
     const handleSignUp = (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const name = form.name.value;
-      const email = form.email.value;
-      const password = form.password.value;
-      const photoURL = form.photoURL.value;
-  
-      if (password.length < 6) {
-        setPassword('Password should be at least 6 characters long');
-        return;
-      }
-      setPassword('');
-  
-      createUser(email, password)
-        .then((result) => {
-          const loggedUser = result.user;
-          console.log(loggedUser);
-          updateUserProfile(name, photoURL);
-          form.reset();
-          Swal.fire({
-            icon: 'success',
-            title: 'Account Created',
-            text: 'Your account has been created successfully!',
-          });
-        })
-        .catch((error) => {
-          if (error.code === 'auth/email-already-in-use') {
-            setEmailError('Email is already in use');
-          }
-          console.log(error);
-        });
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+        const photoURL = form.photoURL.value;
+
+        if (password.length < 6) {
+            setPasswordError('Password should be at least 6 characters long');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            setPasswordError('Passwords do not match');
+            return;
+        }
+
+        setPasswordError('');
+
+        createUser(email, password)
+            .then((result) => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(name, photoURL);
+                form.reset();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Account Created',
+                    text: 'Your account has been created successfully!',
+                });
+            })
+            .catch((error) => {
+                if (error.code === 'auth/email-already-in-use') {
+                    setEmailError('Email is already in use');
+                }
+                console.log(error);
+            });
     };
+
     return (
         <div className='root'>
             <main className="card-container slideUp-animation">
@@ -61,7 +71,7 @@ const SignUp = () => {
                     </a>
                 </div>
                 <form className='signUpForm' onSubmit={handleSignUp} action="" method="">
-                  <div className="form-containers slideRight-animation">
+                    <div className="form-containers slideRight-animation">
 
                         <h1 className="form-header">
                             Get started
@@ -69,16 +79,8 @@ const SignUp = () => {
                         <div className="input-container">
                             <label htmlFor="name"></label>
                             <input className="inputs" type="text" name="name" id="name" required />
-                            <span className = "lebelName">
+                            <span className="lebelName">
                                 Name
-                            </span>
-                        </div>
-
-                        <div className="input-container">
-                            <label htmlFor="photo-url"></label>
-                            <input className="inputs" type="file" name="photoURL" id="photo-url" required />
-                            <span className = "lebelName">
-                                Photo URL
                             </span>
                         </div>
 
@@ -86,7 +88,7 @@ const SignUp = () => {
                             <label htmlFor="mail">
                             </label>
                             <input className="inputs" type="email" name="email" id="mail" required />
-                            <span className = "lebelName">
+                            <span className="lebelName">
                                 E-mail
                             </span>
                             <div className="error">{emailError}</div>
@@ -94,13 +96,25 @@ const SignUp = () => {
 
                         <div className="input-container">
                             <label htmlFor="user-password"></label>
-                            <input  type="password" name="password" id="user-password" className="user-password inputs" required />
-                            <span className = "lebelName">Password</span>
-                            <div className="error">{password}</div>
+                            <input type="password" name="password" id="user-password" className="user-password inputs" required />
+                            <span className="lebelName">Password</span>
+                        </div>
+
+                        <div className="input-container">
+                            <label htmlFor="confirm-password"></label>
+                            <input type="password" name="confirmPassword" id="confirm-password" className="user-password inputs" required />
+                            <span className="lebelName">Confirm Password</span>
+                            <div className="error">{passwordError}</div>
+                        </div>
+
+                        <div className="input-container">
+                            <label htmlFor="photo-url"></label>
+                            <input className=" md:ml-0 ml-20" type="file" name="photoURL" id="photo-url" required />
+
                         </div>
 
                         <div id="btm">
-                            <button type="submit" className="submit-btn">Create Account</button>
+                            <input type="submit" value="Create Account" className="submit-btn" />
                             <p className="btm-text">
                                 Already have an account..? <Link to='/login' className="btm-text-highlighted">  Log in</Link>
                             </p>
