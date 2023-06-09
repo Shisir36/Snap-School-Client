@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
 import wbLogo from "../../../assets/wb-logo/wb-logo-2.png";
-import { FaLongArrowAltUp, FaSignOutAlt, FaUserPlus } from 'react-icons/fa';
+import { FaCartPlus, FaSignOutAlt, FaUserPlus } from 'react-icons/fa';
 import Darkreader from 'react-darkreader';
 import { Authcontext } from '../../../Provider/AuthProvider';
+import useCart from '../../../Hooks/classCart';
 
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const { currentUser, logout } = useContext(Authcontext)
+    const [classCart] = useCart()
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
     };
@@ -21,7 +23,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 py-3 flex items-center justify-between " >
                 <NavLink to="/" className=" flex items-center gap-0">
                     <img src={wbLogo} alt="" className="md:h-12 md:w-12 h-9 w-9" />
-                    <h1 className='titles font-extrabold md:text-4xl text-2xl'>Snap School</h1>
+                    <h1 className='titles font-extrabold md:text-4xl text-3xl'>Snap School</h1>
                 </NavLink>
                 {/* Mobile Nav */}
                 <div className="md:hidden">
@@ -127,6 +129,10 @@ const Navbar = () => {
                             </NavLink>
                         )}
                     </div>
+                    <button className=" inline-flex items-center mr-4">
+                        <FaCartPlus className=' text-2xl' />
+                        <div className="badge badge-secondary">+{classCart?.length || 0}</div>
+                    </button>
                     <Darkreader></Darkreader>
                 </div>
 
@@ -200,9 +206,15 @@ const Navbar = () => {
                                         </NavLink>
                                     )}
                                 </div>
-                               <div className=' mt-3 mb-3'>
-                               <Darkreader></Darkreader>
-                               </div>
+                                <div className=' md:mt-3 mb-3'>
+                                    <button className=" inline-flex items-center md:mr-4">
+                                        <FaCartPlus className=' text-2xl' />
+                                        <div className="badge badge-secondary">+{classCart?.length || 0}</div>
+                                    </button>
+                                    <div>
+                                    <Darkreader></Darkreader>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

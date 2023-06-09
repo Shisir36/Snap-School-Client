@@ -3,12 +3,13 @@ import register from "../../assets/loginImage/undraw_secure_login_pdn4.svg"
 import log from "../../assets/loginImage/undraw_secure_login_pdn4.svg"
 import "./login.css"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaFacebook, FaGoogle, FaLock, FaUser} from "react-icons/fa";
+import { FaFacebook, FaGoogle, FaLock, FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Authcontext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     const [loginError, setLoginError] = useState(null);
+    const [passwordVisible, setPasswordVisible] = useState(false);
     const location = useLocation()
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
@@ -47,49 +48,72 @@ const Login = () => {
                 console.log(error);
             });
     };
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
+
     return (
-        <div >
-            <div class="login-container">
-                <div class="forms-container">
-                    <div class="signin-signup">
-                        <form onSubmit={handleLogin}  class="sign-in-form signForm">
-                            <h2 class="title">Sign in</h2>
-                            <p className='text-red-600 text-sm'>{loginError}</p>
-                            <div class="input-field">
-                               <FaUser className='h-6 w-6 mt-3'></FaUser>
-                                <input type="email" name='email' placeholder="UserEmail" />
+        <div>
+            <div className="login-container">
+                <div className="forms-container">
+                    <div className="signin-signup">
+                        <form onSubmit={handleLogin} className="sign-in-form signForm">
+                            <h2 className="title">Sign in</h2>
+                            <p className="text-red-600 text-sm">{loginError}</p>
+                            <div className="input-field">
+                                <FaUser className="h-6 w-6 mt-3" />
+                                <input type="email" name="email" placeholder="UserEmail" />
                             </div>
-                            <div class="input-field">
-                                <FaLock className='h-6 w-6 mt-3'></FaLock>
-                                <input type="password" name='password' placeholder="Password" />
+                            <div className="input-field">
+                                <FaLock className="h-6 w-6 mt-3" />
+                                <input
+                                    type={passwordVisible ? "text" : "password"}
+                                    name="password"
+                                    placeholder="Password"
+                                    className=' relative'
+                                />
+                               <div className=' absolute top-3 text-xl w-4'>
+                               {passwordVisible ? (
+                                    <FaEyeSlash
+                                        className="password-toggle ml-72"
+                                        onClick={togglePasswordVisibility}
+                                    />
+                                ) : (
+                                    <FaEye
+                                        className="password-toggle ml-72"
+                                        onClick={togglePasswordVisibility}
+                                    />
+                                )}
+                               </div>
                             </div>
-                            <input type="submit" value="Login" class="btn solid" />
-                            <p class="social-text">Or Sign in with social platforms</p>
-                            <div class="social-media">
-                                <button onClick={handleGoogleLogin} href="#" class="social-icon">
-                                   <FaGoogle></FaGoogle>
+                            <input type="submit" value="Login" className="btn solid" />
+                            <p className="social-text">Or Sign in with social platforms</p>
+                            <div className="social-media">
+                                <button onClick={handleGoogleLogin} href="#" className="social-icon">
+                                    <FaGoogle />
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <div class="panels-container">
-                    <div class="panel left-panel">
-                        <div class="content">
-                            <h3>New here ?</h3>
+                <div className="panels-container">
+                    <div className="panel left-panel">
+                        <div className="content">
+                            <h3>New here?</h3>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
                                 ex ratione. Aliquid!
                             </p>
                             <Link to="/signUp">
-                                <button class="btn transparent" id="sign-up-btn">
+                                <button className="btn transparent" id="sign-up-btn">
                                     Sign up
                                 </button>
                             </Link>
 
                         </div>
-                        <img src={log} class="image" alt="" />
+                        <img src={log} className="image" alt="" />
                     </div>
                 </div>
             </div>

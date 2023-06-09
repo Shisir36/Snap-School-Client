@@ -4,11 +4,12 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home/Home";
-import Instructors from "../Pages/Home/Home/Instructors/Instructors";
-import Classes from "../Pages/Home/Home/Classes/Classes";
 import SignUp from "../Pages/Signup/SignUp";
 import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Instructors from "../Pages/Components/Instructors/Instructors";
+import ClassesCart from "../Pages/ClassessCart/ClassesCart";
+import DashBoard from "../Layout/DashBoard";
 
  export const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         },
         {
           path:"/classes",
-          element:<Classes/>
+          element:<ClassesCart/>
         },
         {
           path:"signUp",
@@ -37,5 +38,9 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
           element:<Login/>
         }
       ]
+    },
+    {
+      path:"dashboard",
+      element:<DashBoard/>
     }
   ])

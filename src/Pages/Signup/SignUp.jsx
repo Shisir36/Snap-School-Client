@@ -7,8 +7,7 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const SignUp = () => {
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordotherError, setPasswordotherError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [emailError, setEmailError] = useState('');
     const { createUser, updateUserProfile } = useContext(Authcontext);
@@ -37,6 +36,16 @@ const SignUp = () => {
             return;
         }
 
+        if (!/[A-Z]/.test(password)) {
+            setPasswordotherError('Password should contain at least one capital letter');
+            return;
+        }
+
+        if (!/[!@#$%^&*]/.test(password)) {
+            setPasswordError('Password should contain at least one special character');
+            return;
+        }
+
         setPasswordError('');
 
         createUser(email, password)
@@ -57,6 +66,8 @@ const SignUp = () => {
                 }
                 console.log(error);
             });
+
+        setEmailError("");
     };
 
     return (
@@ -72,7 +83,6 @@ const SignUp = () => {
                 </div>
                 <form className='signUpForm' onSubmit={handleSignUp} action="" method="">
                     <div className="form-containers slideRight-animation">
-
                         <h1 className="form-header">
                             Get started
                         </h1>
@@ -83,36 +93,31 @@ const SignUp = () => {
                                 Name
                             </span>
                         </div>
-
                         <div className="input-container">
-                            <label htmlFor="mail">
-                            </label>
+                            <label htmlFor="mail"></label>
                             <input className="inputs" type="email" name="email" id="mail" required />
                             <span className="lebelName">
                                 E-mail
                             </span>
                             <div className="error">{emailError}</div>
                         </div>
-
                         <div className="input-container">
                             <label htmlFor="user-password"></label>
                             <input type="password" name="password" id="user-password" className="user-password inputs" required />
                             <span className="lebelName">Password</span>
+                            <div className='error'>{passwordotherError}</div>
                         </div>
-
                         <div className="input-container">
                             <label htmlFor="confirm-password"></label>
                             <input type="password" name="confirmPassword" id="confirm-password" className="user-password inputs" required />
                             <span className="lebelName">Confirm Password</span>
                             <div className="error">{passwordError}</div>
                         </div>
-
                         <div className="input-container">
-                            <label htmlFor="photo-url"></label>
-                            <input className=" md:ml-0 ml-20" type="file" name="photoURL" id="photo-url" required />
-
+                            <label htmlFor="PhotoURL"></label>
+                            <input type="text" className="inputs" name="photoURL" id="PhotoURL" required />
+                            <span className="lebelName">PhotoURL</span>
                         </div>
-
                         <div id="btm">
                             <input type="submit" value="Create Account" className="submit-btn" />
                             <p className="btm-text">
@@ -127,3 +132,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
