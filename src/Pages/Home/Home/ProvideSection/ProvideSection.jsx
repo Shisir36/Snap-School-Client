@@ -26,17 +26,17 @@ const ProvideSection = () => {
 
     return (
         <section
-            className="py-16 bg-cover bg-center min-h-screen"
+            className="py-20 md:bg-cover bg-center"
             style={{ backgroundImage: `url("https://images.unsplash.com/photo-1521116583201-926fc9be4184?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8f"` }}
         >
-            <div className="container mt-28 md:ml-10">
-                <h2 className="titles md:text-7xl text-6xl text-center md:text-left font-bold text-white mb-8" data-aos="fade-up" data-aos-duration="1000">
+            <div className=" mt-20 md:ml-10">
+                <h2 className="titles md:text-7xl text-5xl text-center md:text-left font-bold text-white mb-8" data-aos="fade-up" data-aos-duration="1000">
                     Cognitive <br />
                     Video Lessons <br />
                     by Zoom
                 </h2>
-                <div className="md:flex  md:mt-0 mt-10 md:gap-3 md:ml-0 ml-14">
-                    <button className="bg-orange-600 hover:bg-black text-gray-50 font-semibold px-14 py-4 rounded-full flex items-center space-x-1 " data-aos="fade-up">
+                <div className="md:flex  md:mt-0 mt-10 md:gap-3 md:ml-0 ml-20">
+                    <button className="bg-orange-600 hover:bg-black text-gray-50 font-semibold md:px-14 px-10 py-4 rounded-full flex items-center space-x-1 " data-aos="fade-up">
                         <span>Read More</span>
                         <FaArrowRight />
                     </button>

@@ -22,11 +22,11 @@ const Banner = () => {
                         Expand your photography skills with our experienced instructors.
                     </p>
                     <div className="carousel-buttons">
-                        <button className="signup-button mb-3 bg-orange-600 text-white font-semibold px-12 py-5 rounded-full mr-4 inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
+                        <button className="signup-button mb-3 bg-orange-600 text-white font-semibold md:px-12   py-5   px-8 rounded-full mr-4 inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
                             <span>Sign Up</span>
                             <FaArrowRight className="ml-1" />
                         </button>
-                        <button className="readmore-button bg-gray-900 text-white font-semibold px-12  py-5 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
+                        <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12   py-5   px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
                             <span>Read More</span> <FaArrowRight />
                         </button>
                     </div>
@@ -40,10 +40,10 @@ const Banner = () => {
                         Discover a wide range of photography courses tailored to your interests.
                     </p>
                     <div className="carousel-buttons">
-                        <button className="signup-button mb-3 bg-orange-600 text-white font-semibold px-12  py-5 rounded-full mr-4 inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
+                        <button className="signup-button mb-3 bg-orange-600 text-white font-semibold md:px-12   py-5   px-8 rounded-full mr-4 inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
                             <span>Sign Up</span> <FaArrowRight />
                         </button>
-                        <button className="readmore-button bg-gray-900 text-white font-semibold px-12  py-5 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
+                        <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12   py-5   px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
                             <span>Read More</span> <FaArrowRight />
                         </button>
                     </div>
@@ -57,10 +57,10 @@ const Banner = () => {
                         Unleash your creativity and capture stunning photographs.
                     </p>
                     <div className="carousel-buttons">
-                        <button className="signup-button mb-3 bg-orange-600 text-white font-semibold px-12  py-5 rounded-full mr-4 inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
+                        <button className="signup-button mb-3 bg-orange-600 text-white font-semibold md:px-12   py-5   px-8 rounded-full mr-4 inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
                             <span>Sign Up</span> <FaArrowRight />
                         </button>
-                        <button className="readmore-button bg-gray-900 text-white font-semibold px-12  py-5 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
+                        <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12   py-5   px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900  transition duration-500 ease-in-out">
                             <span>Read More</span> <FaArrowRight />
                         </button>
                     </div>

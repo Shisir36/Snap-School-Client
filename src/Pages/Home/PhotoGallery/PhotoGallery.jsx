@@ -20,7 +20,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 function PhotoGallery() {
     return (
         <div className="md:px-5 px-0">
-            <h1 className="text-center text-6xl font-bold mt-10 titles"><span className=' text-orange-600'>Our Students </span><br />
+            <h1 className="text-center md:text-6xl text-4xl font-bold mt-10 titles"><span className=' text-orange-600'>Our Students </span><br />
                 Works</h1>
             <Swiper
                 effect={'coverflow'}

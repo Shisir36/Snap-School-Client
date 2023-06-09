@@ -20,8 +20,8 @@ const Navbar = () => {
         <nav className=" md:absolute z-20 w-full">
             <div className="container mx-auto px-4 py-3 flex items-center justify-between " >
                 <NavLink to="/" className=" flex items-center gap-0">
-                    <img src={wbLogo} alt="" className="h-12 w-12" />
-                    <h1 className='titles font-extrabold text-4xl '>Snap School</h1>
+                    <img src={wbLogo} alt="" className="md:h-12 md:w-12 h-9 w-9" />
+                    <h1 className='titles font-extrabold md:text-4xl text-2xl'>Snap School</h1>
                 </NavLink>
                 {/* Mobile Nav */}
                 <div className="md:hidden">
@@ -77,7 +77,7 @@ const Navbar = () => {
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
-                            isActive ? 'text-orange-500 font-extrabold text-[23px]' : 'text-gray-800 font-semibold text-[23px]'
+                            isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
                         }
                     >
                         Home
@@ -85,7 +85,7 @@ const Navbar = () => {
                     <NavLink
                         to="/instructors"
                         className={({ isActive }) =>
-                            isActive ? 'text-orange-500 font-extrabold text-[23px]' : 'text-gray-800 font-semibold text-[23px]'
+                            isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
                         }
                     >
                         Instructors
@@ -93,7 +93,7 @@ const Navbar = () => {
                     <NavLink
                         to="/classes"
                         className={({ isActive }) =>
-                            isActive ? 'text-orange-500 font-extrabold text-[23px]' : 'text-gray-800 font-semibold text-[23px]'
+                            isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
                         }
                     >
                         Classes
@@ -120,7 +120,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/signUp"
                                 className={({ isActive }) =>
-                                    isActive ? 'text-orange-500 font-extrabold text-[23px]' : 'text-gray-800 font-semibold text-[23px]'
+                                    isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
                                 }
                             >
                                 <FaUserPlus className=' text-3xl mr-7' />
@@ -152,7 +152,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/"
                                     className={({ isActive }) =>
-                                        isActive ? 'text-orange-400 font-extrabold text-[23px]' : 'text-gray-600 font-semibold text-[23px]'
+                                        isActive ? 'text-orange-400 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-600 font-semibold md:text-[23px] text-[19px]'
                                     }
                                 >
                                     Home
@@ -162,7 +162,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/instructors"
                                     className={({ isActive }) =>
-                                        isActive ? 'text-orange-400 font-extrabold text-[23px]' : 'text-gray-600 font-semibold text-[23px]'
+                                        isActive ? 'text-orange-400 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-600 font-semibold md:text-[23px] text-[19px]'
                                     }
                                 >
                                     Instructors
@@ -172,7 +172,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/classes"
                                     className={({ isActive }) =>
-                                        isActive ? 'text-orange-400 font-extrabold text-[23px] ' : 'text-gray-600 font-semibold text-[23px]'
+                                        isActive ? 'text-orange-400 font-extrabold md:text-[23px] text-[19px] ' : 'text-gray-600 font-semibold md:text-[23px] text-[19px]'
                                     }
                                 >
                                     Classes
@@ -193,7 +193,7 @@ const Navbar = () => {
                                         <NavLink
                                             to="/signUp"
                                             className={({ isActive }) =>
-                                                isActive ? 'text-orange-500 font-extrabold text-[23px]' : 'text-gray-800 font-semibold text-[23px]'
+                                                isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold md:text-[23px] text-[19px]'
                                             }
                                         >
                                             <FaUserPlus className=' text-3xl mr-7' />
