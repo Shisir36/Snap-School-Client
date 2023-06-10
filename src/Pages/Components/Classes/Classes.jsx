@@ -28,7 +28,7 @@ const Classes = ({ classItem }) => {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Food added on the cart.',
+                            title: 'Class added on the cart.',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -37,7 +37,7 @@ const Classes = ({ classItem }) => {
         }
         else {
             Swal.fire({
-                title: 'Please login to order the food',
+                title: 'Please login to Purchase this class',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

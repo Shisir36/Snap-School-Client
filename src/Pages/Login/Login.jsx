@@ -35,18 +35,22 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         signInWithGoogle()
-            .then((result) => {
-                const user = result.user;
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Google Login Successful',
-                    text: `Logged in as ${user.email}`,
-                });
-                navigate(from, { replace: true });
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
             })
-            .catch((error) => {
-                console.log(error);
-            });
     };
 
     const togglePasswordVisibility = () => {
@@ -73,19 +77,19 @@ const Login = () => {
                                     placeholder="Password"
                                     className=' relative'
                                 />
-                               <div className=' absolute top-3 text-xl w-4'>
-                               {passwordVisible ? (
-                                    <FaEyeSlash
-                                        className="password-toggle ml-72"
-                                        onClick={togglePasswordVisibility}
-                                    />
-                                ) : (
-                                    <FaEye
-                                        className="password-toggle ml-72"
-                                        onClick={togglePasswordVisibility}
-                                    />
-                                )}
-                               </div>
+                                <div className=' absolute top-3 text-xl w-4'>
+                                    {passwordVisible ? (
+                                        <FaEyeSlash
+                                            className="password-toggle ml-72"
+                                            onClick={togglePasswordVisibility}
+                                        />
+                                    ) : (
+                                        <FaEye
+                                            className="password-toggle ml-72"
+                                            onClick={togglePasswordVisibility}
+                                        />
+                                    )}
+                                </div>
                             </div>
                             <input type="submit" value="Login" className="btn solid" />
                             <p className="social-text">Or Sign in with social platforms</p>

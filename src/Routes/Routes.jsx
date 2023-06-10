@@ -13,6 +13,8 @@ import DashBoard from "../Layout/DashBoard";
 import SelectedClasses from "../Pages/DashBoard/SelectedClasses";
 import AddClass from "../Pages/DashBoard/InstructorDashboard/AddClass";
 import ManageClasses from "../Pages/DashBoard/Admin/ManageClasses";
+import PrivateRoute from "./PrivateRoute";
+import ManageUsers from "../Pages/DashBoard/Admin/ManageUsers/ManageUsers";
 
 
  export const router = createBrowserRouter([
@@ -45,7 +47,7 @@ import ManageClasses from "../Pages/DashBoard/Admin/ManageClasses";
     },
     {
       path:"/dashboard",
-      element:<DashBoard/>,
+      element: <PrivateRoute><DashBoard/></PrivateRoute>,
       children:[
         {
           path:"selectedClass",
@@ -58,6 +60,10 @@ import ManageClasses from "../Pages/DashBoard/Admin/ManageClasses";
          {
           path:"manageClass",
           element:<ManageClasses/>
+         },
+         {
+          path:"manageUsers",
+          element:<ManageUsers/>
          },
          ]
       

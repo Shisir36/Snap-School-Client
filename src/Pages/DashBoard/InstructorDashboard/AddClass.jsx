@@ -49,7 +49,7 @@ const AddClass = () => {
 
     return (
         <div className="bg-gray-100 w-full">
-            <div className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+            <div className="max-w-md mx-auto bg-orange-400 p-6 rounded-md shadow-md">
                 <h1 className="text-2xl font-bold mb-6">Add a Class</h1>
                 <form onSubmit={handleAddClass}>
                     <div className="mb-4">
@@ -97,7 +97,7 @@ const AddClass = () => {
                             onChange={(e) => setPrice(Number(e.target.value))}
                         />
                     </div>
-                    <input type="submit" value=" Add Class" className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600" />
+                    <input type="submit" value=" Add Class" className=" text-white rounded-md btn btn-primary hover:bg-blue-600" />
                     
                 </form>
             </div>

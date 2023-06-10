@@ -74,8 +74,8 @@ const ManageClasses = () => {
             <div className="grid lg:grid-cols-2 gap-12">
                 {
                     classes.map(course =>
-                        <div key={course._id} className="card card-compact w-80 bg-base-100 shadow-xl">
-                            <figure><img src={course.image} alt="Shoes" /></figure>
+                        <div key={course._id} className="card card-compact w-80 h-[550px] bg-base-100 shadow-xl">
+                            <figure><img src={course.image} className=" h-80" alt="Shoes" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{course.name}</h2>
                                 <p className="font-bold">Instructor: {course.instructor}</p>
