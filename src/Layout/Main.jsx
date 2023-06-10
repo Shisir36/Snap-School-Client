@@ -6,7 +6,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 // import { RotatingTriangles } from 'react-loader-spinner';
 import { Authcontext } from '../Provider/AuthProvider';
 import { PacmanLoader } from 'react-spinners';
-
 const Main = () => {
   const location = useLocation();
   const noHeaderFooter = location.pathname.includes('signUp');

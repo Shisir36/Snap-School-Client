@@ -100,6 +100,14 @@ const Navbar = () => {
                     >
                         Classes
                     </NavLink>
+                    <NavLink
+                        to="/dashboard"
+                        className={({ isActive }) =>
+                            isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
+                        }
+                    >
+                        Dashboard
+                    </NavLink>
                 </div>
                 <div className="hidden md:flex items-center ml-auto">
                     <div>

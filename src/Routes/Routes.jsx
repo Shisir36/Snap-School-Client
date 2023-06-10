@@ -10,6 +10,10 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Instructors from "../Pages/Components/Instructors/Instructors";
 import ClassesCart from "../Pages/ClassessCart/ClassesCart";
 import DashBoard from "../Layout/DashBoard";
+import SelectedClasses from "../Pages/DashBoard/SelectedClasses";
+import AddClass from "../Pages/DashBoard/InstructorDashboard/AddClass";
+import ManageClasses from "../Pages/DashBoard/Admin/ManageClasses";
+
 
  export const router = createBrowserRouter([
     {
@@ -40,7 +44,22 @@ import DashBoard from "../Layout/DashBoard";
       ]
     },
     {
-      path:"dashboard",
-      element:<DashBoard/>
+      path:"/dashboard",
+      element:<DashBoard/>,
+      children:[
+        {
+          path:"selectedClass",
+          element:<SelectedClasses/>
+         },
+         {
+          path:"addClass",
+          element:<AddClass/>
+         },
+         {
+          path:"manageClass",
+          element:<ManageClasses/>
+         },
+         ]
+      
     }
   ])
