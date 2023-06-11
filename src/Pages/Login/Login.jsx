@@ -38,7 +38,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
-                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, image:loggedInUser.photoURL }
                 fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
@@ -67,7 +67,7 @@ const Login = () => {
                             <p className="text-red-600 text-sm">{loginError}</p>
                             <div className="input-field">
                                 <FaUser className="h-6 w-6 mt-3" />
-                                <input type="email" name="email" placeholder="UserEmail" />
+                                <input type="email" name="email" placeholder="UserEmail" className=' ' />
                             </div>
                             <div className="input-field">
                                 <FaLock className="h-6 w-6 mt-3" />
@@ -75,7 +75,7 @@ const Login = () => {
                                     type={passwordVisible ? "text" : "password"}
                                     name="password"
                                     placeholder="Password"
-                                    className=' relative'
+                                    className=' relative  '
                                 />
                                 <div className=' absolute top-3 text-xl w-4'>
                                     {passwordVisible ? (
@@ -91,7 +91,7 @@ const Login = () => {
                                     )}
                                 </div>
                             </div>
-                            <input type="submit" value="Login" className="btn solid" />
+                            <input type="submit" value="Login" className="lbtn solid  " />
                             <p className="social-text">Or Sign in with social platforms</p>
                             <div className="social-media">
                                 <button onClick={handleGoogleLogin} href="#" className="social-icon">

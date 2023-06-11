@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
   
     const createUser = (email, password) => {
+      // setLoading(true)
       return createUserWithEmailAndPassword(auth, email, password);
     };
   
@@ -19,6 +20,7 @@ const AuthProvider = ({ children }) => {
       })
     };
     const signIn = (email, password) => {
+      // setLoading(true)
       return signInWithEmailAndPassword(auth, email, password);
     };
   
@@ -29,6 +31,7 @@ const AuthProvider = ({ children }) => {
   
     const googleAuthProvider = new GoogleAuthProvider();
     const signInWithGoogle = () => {
+      // setLoading(true)
       return signInWithPopup(auth, googleAuthProvider);
     };
   
@@ -44,9 +47,11 @@ const AuthProvider = ({ children }) => {
           })
       }
       else{
-          localStorage.removeItem('access-token')
+          localStorage.removeItem('access-token');
+        
       }
-        setLoading(false);
+      setLoading(false);
+       
       });
   
       return () => {

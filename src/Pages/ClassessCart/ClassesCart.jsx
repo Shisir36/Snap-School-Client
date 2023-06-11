@@ -5,6 +5,7 @@ import { useClassesData } from '../../Hooks/Hook';
 const ClassesCart = () => {
     const classes = useClassesData();
     const approvedClasses = classes.filter(item => item.status === 'approved');
+    console.log(approvedClasses);
 
     return (
         <div>

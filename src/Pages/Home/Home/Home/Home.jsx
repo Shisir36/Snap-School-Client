@@ -6,13 +6,17 @@ import PhotoGallery from '../../PhotoGallery/PhotoGallery';
 import WatchVideoSection from '../../WatchVideoSection/WatchVideoSection';
 import Testimonials from '../Testimonials/Testimonials';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Snap School | Home</title>  
+            </Helmet>
             <Banner />
             <About />
-            <PopularInstructors/>
+            <PopularInstructors />
             <ProvideSection />
             <PhotoGallery />
             <WatchVideoSection />

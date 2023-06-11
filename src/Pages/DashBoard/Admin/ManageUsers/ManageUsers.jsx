@@ -4,8 +4,6 @@ import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
-
-
 const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
@@ -19,13 +17,31 @@ const ManageUsers = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             if(data.modifiedCount){
                 refetch();
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
                     title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500 })
+            }
+        })
+    }
+
+    const handleMakeInstructor = user =>{
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Instructor Now!`,
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -52,6 +68,7 @@ const ManageUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Role2</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -63,6 +80,9 @@ const ManageUsers = () => {
                                 <td>{user.email}</td>
                                 <td>{ user.role === 'admin' ? 'admin' :
                                     <button onClick={() => handleMakeAdmin(user)} className=" bg-orange-600 py-3 px-3 rounded-md  text-white"><FaUserShield className=" text-[20px]"></FaUserShield></button> 
+                                    }</td>
+                                <td>{ user.role === 'instructor' ? 'instructor' :
+                                    <button onClick={() => handleMakeInstructor(user)} className=" bg-orange-600 py-3 px-3 rounded-md  text-white"><FaUserShield className=" text-[20px]"></FaUserShield></button> 
                                     }</td>
                                 <td><button onClick={() => handleDelete(user)} className=" py-3 px-3 bg-red-600 rounded-md text-white"><FaTrashAlt></FaTrashAlt></button></td>
                             </tr>)

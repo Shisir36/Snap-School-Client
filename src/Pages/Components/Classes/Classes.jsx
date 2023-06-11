@@ -3,6 +3,7 @@ import { Authcontext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../../Hooks/classCart";
+import { Helmet } from "react-helmet-async";
 
 const Classes = ({ classItem }) => {
     const { currentUser } = useContext(Authcontext)
@@ -53,6 +54,9 @@ const Classes = ({ classItem }) => {
 
     return (
         <div>
+            <Helmet>
+                <title>Snap School | Classes</title>  
+            </Helmet>
             <div className={`border rounded shadow-sm p-4 mb-4 ${availableSeats === 0 ? 'bg-red-100' : 'bg-white'}`}>
                 <img src={image} alt={name} className="w-full h-40 object-cover rounded mb-4" />
                 <h2 className="text-xl font-semibold mb-2">{name}</h2>

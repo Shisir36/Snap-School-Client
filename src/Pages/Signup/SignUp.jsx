@@ -49,7 +49,7 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(name, photoURL)
                     .then(() => {
-                        const saveUser = { name:name, email:email };
+                        const saveUser = { name:name, email:email, image:photoURL };
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {

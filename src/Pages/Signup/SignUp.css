@@ -56,7 +56,7 @@
     font-size: 15px;
     transition: all .4s;
 }
-[type="submit"]{
+.submit-btn{
     border: 0;
     background-color: var(--dusky-green);
     color: white;
