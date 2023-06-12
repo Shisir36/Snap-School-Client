@@ -13,7 +13,7 @@ const useAxiosSecure = () => {
     const { logout } = useAuth();
     const navigate = useNavigate();
     const axiosSecure = axios.create({
-        baseURL: 'http://localhost:5000',
+        baseURL: 'https://snap-school-server-shisir36.vercel.app',
     });
 
     useEffect(() => {

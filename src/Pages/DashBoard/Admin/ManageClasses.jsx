@@ -20,7 +20,7 @@ const ManageClasses = () => {
 
     const handleApproveClass = async (id) => {
         try {
-            await axios.patch(`http://localhost:5000/classes/${id}`, { action: 'approve' });
+            await axios.patch(`https://snap-school-server-shisir36.vercel.app/classes/${id}`, { action: 'approve' });
             refetch();
             setDisabledButtons([...disabledButtons, id]);
         } catch (error) {
@@ -30,7 +30,7 @@ const ManageClasses = () => {
 
     const handleDenyClass = async (id) => {
         try {
-            await axios.patch(`http://localhost:5000/classes/${id}`, { action: 'deny' });
+            await axios.patch(`https://snap-school-server-shisir36.vercel.app/classes/${id}`, { action: 'deny' });
             refetch();
             setDisabledButtons([...disabledButtons, id]);
         } catch (error) {
@@ -53,7 +53,7 @@ const ManageClasses = () => {
 
     const handleFeedbackSubmit = async () => {
         try {
-            await axios.patch(`http://localhost:5000/classes/${currentItemId}`, {
+            await axios.patch(`https://snap-school-server-shisir36.vercel.app/classes/${currentItemId}`, {
                 action: 'feedback',
                 feedback: feedback
             });

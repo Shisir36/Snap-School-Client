@@ -30,7 +30,12 @@ const DashBoard = () => {
                     {/* Sidebar content here */}
                     
                     {isAdmin ? (<>
-                        <h1 className=' text-4xl '>Admin Dashboard</h1>
+                        <div className=' mx-auto text-center'>
+                          <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
+                          <h2 className='text-xl'>{currentUser.displayName}</h2>
+                        <h2 className=' text-3xl font-bold'>Admin</h2>
+                          </div>
+                        <div className="divider"></div>
                         <li className=' mt-4'>
                             <NavLink to="/dashboard/manageClass"> <FaCheckSquare></FaCheckSquare>ManageClass</NavLink>
                         </li>
@@ -40,8 +45,16 @@ const DashBoard = () => {
                     </>)
 
 
-                        : isInstructor ? <> <li className=' mt-4'>
-                            <NavLink to="/dashboard/addClass"> <FaCriticalRole></FaCriticalRole>addClass</NavLink>
+                        : isInstructor ? <>
+                        <div className=' mx-auto text-center'>
+                          <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
+                          <h2 className='text-xl'>{currentUser.displayName}</h2>
+                        <h2 className=' text-3xl font-bold'>Instructor</h2>
+                          </div>
+                        <div className="divider"></div>
+                        
+                         <li className=' mt-4'>
+                            <NavLink to="/dashboard/addClass"> <FaCriticalRole></FaCriticalRole>Add Class</NavLink>
                         </li>
                         <li className=' mt-4'>
                             <NavLink to="/dashboard/myClasses"> <FaCriticalRole></FaCriticalRole>My Classes</NavLink>
@@ -51,6 +64,12 @@ const DashBoard = () => {
 
 
                             : <>
+                          <div className=' mx-auto text-center'>
+                          <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
+                          <h2 className='text-xl'>{currentUser.displayName}</h2>
+                         <h2 className=' text-3xl font-bold'>Student</h2>
+                          </div>
+                        <div className="divider"></div>
                                 <li>
                                     <NavLink to="/dashboard/selectedClass"><FaUser />My Selected  Classes</NavLink>
                                 </li>

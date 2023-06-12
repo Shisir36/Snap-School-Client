@@ -50,7 +50,7 @@ const SignUp = () => {
                 updateUserProfile(name, photoURL)
                     .then(() => {
                         const saveUser = { name:name, email:email, image:photoURL };
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://snap-school-server-shisir36.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

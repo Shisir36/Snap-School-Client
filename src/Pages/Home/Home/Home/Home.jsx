@@ -7,6 +7,7 @@ import WatchVideoSection from '../../WatchVideoSection/WatchVideoSection';
 import Testimonials from '../Testimonials/Testimonials';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import { Helmet } from 'react-helmet-async';
+import PopularClasses from '../PopularClasses/PopularClasses';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <About />
             <PopularInstructors />
             <ProvideSection />
+            <PopularClasses/>
             <PhotoGallery />
             <WatchVideoSection />
             <Testimonials />

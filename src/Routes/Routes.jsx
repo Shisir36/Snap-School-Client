@@ -19,6 +19,7 @@ import AdminRoute from "./AdminRoute";
 import MyClasses from "../Pages/DashBoard/InstructorDashboard/MyClasses";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import MyEnrolledClasses from "../Pages/DashBoard/Payment/MyEnrolledClasses";
+import InstructorRoute from "./InstructorRoute";
 
 
  export const router = createBrowserRouter([
@@ -63,11 +64,11 @@ import MyEnrolledClasses from "../Pages/DashBoard/Payment/MyEnrolledClasses";
          },
          {
           path:"addClass",
-          element:<AddClass/>
+          element:<InstructorRoute><AddClass/></InstructorRoute>
          },
          {
           path:"myClasses",
-          element:<MyClasses/>
+          element:<InstructorRoute><MyClasses/></InstructorRoute>
          },
          {
           path:"myenrolledclasses",

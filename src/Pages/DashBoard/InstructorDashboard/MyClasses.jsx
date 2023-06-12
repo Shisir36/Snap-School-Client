@@ -8,7 +8,7 @@ const MyClasses = () => {
     const { currentUser } = useContext(Authcontext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myClasses/?email=${currentUser.email}`)
+        fetch(`https://snap-school-server-shisir36.vercel.app/myClasses/?email=${currentUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyClasses(data)
@@ -40,13 +40,13 @@ const MyClasses = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
+                                        <div className="font-bold">{myclass.name}</div>
+                                        
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <span className="badge badge-ghost badge-sm">{myclass.status}</span>
+                                <span className="badge badge-ghost badge-sm font-bold">{myclass.status}</span>
                             </td>
                             <td>{myclass.feedback}</td>
                             <th>
