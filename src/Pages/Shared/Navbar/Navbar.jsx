@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, } from 'react-router-dom';
+import { Link, NavLink, } from 'react-router-dom';
 import wbLogo from "../../../assets/wb-logo/wb-logo-2.png";
 import { FaCartPlus, FaSignOutAlt, FaUserPlus } from 'react-icons/fa';
 import Darkreader from 'react-darkreader';
@@ -137,10 +137,12 @@ const Navbar = () => {
                             </NavLink>
                         )}
                     </div>
+                    <Link to = "/dashboard">
                     <button className=" inline-flex items-center mr-4">
                         <FaCartPlus className=' text-2xl' />
                         <div className="badge badge-secondary">+{classCart?.length || 0}</div>
                     </button>
+                    </Link>
                     <Darkreader></Darkreader>
                 </div>
 
@@ -215,10 +217,12 @@ const Navbar = () => {
                                     )}
                                 </div>
                                 <div className=' md:mt-3 mb-3'>
+                                    <Link to='/dashboard'>
                                     <button className=" inline-flex items-center md:mr-4">
                                         <FaCartPlus className=' text-2xl' />
                                         <div className="badge badge-secondary">+{classCart?.length || 0}</div>
                                     </button>
+                                    </Link>
                                     <div>
                                     <Darkreader></Darkreader>
                                     </div>

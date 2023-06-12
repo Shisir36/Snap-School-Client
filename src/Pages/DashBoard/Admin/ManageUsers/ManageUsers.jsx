@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 // import { Helmet } from "react-helmet-async";
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import { FaTrashAlt, FaUserShield, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
@@ -67,8 +67,8 @@ const ManageUsers = () => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
-                            <th>Role2</th>
+                            <th>Make Admin</th>
+                            <th>Make Instructor</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -82,7 +82,7 @@ const ManageUsers = () => {
                                     <button onClick={() => handleMakeAdmin(user)} className=" bg-orange-600 py-3 px-3 rounded-md  text-white"><FaUserShield className=" text-[20px]"></FaUserShield></button> 
                                     }</td>
                                 <td>{ user.role === 'instructor' ? 'instructor' :
-                                    <button onClick={() => handleMakeInstructor(user)} className=" bg-orange-600 py-3 px-3 rounded-md  text-white"><FaUserShield className=" text-[20px]"></FaUserShield></button> 
+                                    <button onClick={() => handleMakeInstructor(user)} className=" bg-orange-600 py-3 px-3 rounded-md  text-white"><FaUsers className=" text-[20px]"></FaUsers></button> 
                                     }</td>
                                 <td><button onClick={() => handleDelete(user)} className=" py-3 px-3 bg-red-600 rounded-md text-white"><FaTrashAlt></FaTrashAlt></button></td>
                             </tr>)

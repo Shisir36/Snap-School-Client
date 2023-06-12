@@ -1,19 +1,29 @@
+
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import useCart from "../../../Hooks/classCart";
 import CheckoutForm from "./CheckOutForm/CheckoutForm";
+import { Elements } from "@stripe/react-stripe-js";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 // TODO: provide publishable Key
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_PK);
 const Payment = () => {
-    const [cart] = useCart();
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-    const price = parseFloat(total.toFixed(2))
+    const [payment, setPayment] = useState([])
+    const {id} = useParams()
+    useEffect(()=>{
+       fetch(`http://localhost:5000/myClassCart/${id}`)
+       .then(res => res.json())
+       .then(data => {
+        console.log(data);
+        setPayment(data)
+       })
+    }, [payment])
     return (
         <div>
-            <h2 className="text-3xl"> </h2>
+            <p className=" text-4xl text-center text-orange-500">Price {payment.price}</p>
             <Elements stripe={stripePromise}>
-                <CheckoutForm cart={cart} price={price}></CheckoutForm>
+                <CheckoutForm payment={payment} price={payment.price} ></CheckoutForm>
             </Elements>
         </div>
     );

@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaCamera, FaCheckSquare, FaCriticalRole, FaHome, FaUser } from 'react-icons/fa';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
 import useInstructor from '../Hooks/useInstructor';
+import { Authcontext } from '../Provider/AuthProvider';
 
 const DashBoard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
+    const {currentUser} = useContext(Authcontext)
 
     return (
 
@@ -26,8 +28,9 @@ const DashBoard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full text-base-content">
                     {/* Sidebar content here */}
-                    <h1 className=' text-4xl '>Student Dashboard</h1>
+                    
                     {isAdmin ? (<>
+                        <h1 className=' text-4xl '>Admin Dashboard</h1>
                         <li className=' mt-4'>
                             <NavLink to="/dashboard/manageClass"> <FaCheckSquare></FaCheckSquare>ManageClass</NavLink>
                         </li>
@@ -52,7 +55,7 @@ const DashBoard = () => {
                                     <NavLink to="/dashboard/selectedClass"><FaUser />My Selected  Classes</NavLink>
                                 </li>
                                 <li className=' mt-4'>
-                                    <NavLink> <FaCheckSquare></FaCheckSquare>My Enrolled Classes</NavLink>
+                                    <NavLink to= "/dashboard/myenrolledclasses"> <FaCheckSquare></FaCheckSquare>My Enrolled Classes</NavLink>
                                 </li>
                             </>}
                     <div className="divider"></div>

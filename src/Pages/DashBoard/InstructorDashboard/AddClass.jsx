@@ -22,6 +22,7 @@ const AddClass = () => {
             availableSeats,
             price,
             status: 'pending',
+            totalEnrolledStudents: 0,
         };
 
         fetch('http://localhost:5000/classes', {
