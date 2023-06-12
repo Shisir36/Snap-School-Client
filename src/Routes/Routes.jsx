@@ -7,7 +7,6 @@ import Home from "../Pages/Home/Home/Home/Home";
 import SignUp from "../Pages/Signup/SignUp";
 import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import Instructors from "../Pages/Components/Instructors/Instructors";
 import ClassesCart from "../Pages/ClassessCart/ClassesCart";
 import DashBoard from "../Layout/DashBoard";
 import SelectedClasses from "../Pages/DashBoard/SelectedClasses";
@@ -20,6 +19,7 @@ import MyClasses from "../Pages/DashBoard/InstructorDashboard/MyClasses";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import MyEnrolledClasses from "../Pages/DashBoard/Payment/MyEnrolledClasses";
 import InstructorRoute from "./InstructorRoute";
+import Instructors from "../Pages/Components/Instructors/Instructors";
 
 
  export const router = createBrowserRouter([

@@ -9,7 +9,7 @@ const PopularInstructors = () => {
         fetch('https://snap-school-server-shisir36.vercel.app/users/instructors')
             .then((response) => response.json())
             .then((data) => {
-                setInstructors(data);
+                setInstructors(data.slice(0, 6));
             })
             .catch((error) => {
                 console.log(error);
