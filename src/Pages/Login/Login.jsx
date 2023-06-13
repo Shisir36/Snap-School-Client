@@ -15,8 +15,7 @@ const Login = () => {
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
     const { signIn, signInWithGoogle } = useContext(Authcontext);
-    const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const handleLogin = (data) => {
         const { email, password } = data;
         signIn(email, password)
@@ -26,6 +25,7 @@ const Login = () => {
                     title: 'Login Successful',
                     text: `Logged in as ${result.user.email}`,
                 });
+                reset(); // Reset form fields
                 navigate(from, { replace: true });
             })
             .catch(error => setLoginError("Invalid email or password"));
@@ -35,7 +35,7 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 const loggedInUser = result.user;
-                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL, role:"student" };
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL, role: "student" };
                 fetch('https://snap-school-server-shisir36.vercel.app/users', {
                     method: 'POST',
                     headers: {
@@ -92,7 +92,7 @@ const Login = () => {
                             <input type="submit" value="Login" className="lbtn solid hover:bg-blue-500" />
                             <p className="social-text">Or Sign in with social platforms</p>
                             <div className="social-media">
-                                <button onClick={handleGoogleLogin} href="#" className="social-icon">
+                                <button onClick={handleGoogleLogin} className="social-icon">
                                     <FaGoogle />
                                 </button>
                             </div>
@@ -123,4 +123,3 @@ const Login = () => {
 };
 
 export default Login;
-

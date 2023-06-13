@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <div className="text-gray-300 text-center md:text-left">
-                            <NavLink to="/" className=" flex items-center gap-0 mb-2 ml-10 md:ml-0">
+                            <NavLink to="/" className=" flex items-center gap-0 mb-2 ml-16 md:ml-0">
                                 <img src={wbLogo} alt="" className="h-10 w-10" />
                                 <h1 className='font-bold text-3xl'>Snap School</h1>
                             </NavLink>
@@ -81,6 +81,7 @@ const Footer = () => {
                         <p className="text-sm">
                             &copy; {new Date().getFullYear()} Snap School. All rights reserved.
                         </p>
+                        <p className=' mt-2'>Created by <span className=' titles text-orange-500'>Al Mamun Shisir</span></p>
                     </div>
                 </div>
             </footer>

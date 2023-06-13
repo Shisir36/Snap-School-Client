@@ -26,7 +26,7 @@ const Instructors = () => {
          <div className=' md:grid grid-cols-3 py-10 gap-6'>
             {
                 instructors.map(instructor => (  
-                <div className="card md:w-96 w-80 bg-base-100 shadow-xl ml-5 mb-3">
+                <div className="card md:w-96 w-80 bg-base-100 shadow-xl md:ml-7 ml-10 mb-3">
                 <figure className="px-10 pt-10">
                     <img src={instructor.image} alt="Shoes" className="rounded-xl h-48 w-48" />
                 </figure>
