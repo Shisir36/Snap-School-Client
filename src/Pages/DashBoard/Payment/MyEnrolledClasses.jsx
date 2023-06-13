@@ -7,7 +7,7 @@ const MyEnrolledClasses = () => {
     const [enrolled, setEnrolled] = useState([]);
     const { currentUser } = useContext(Authcontext);
     useEffect(() => {
-        fetch(`http://localhost:5000/enrolledclasses?email=${currentUser.email}`)
+        fetch(`https://snap-school-server-shisir36.vercel.app/enrolledclasses?email=${currentUser.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

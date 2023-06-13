@@ -1,11 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Instructors = () => {
     const [instructors, setAllInstructors] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users/instructors')
+        fetch('https://snap-school-server-shisir36.vercel.app/users/instructors')
             .then((response) => response.json())
             .then((data) => {
                 setAllInstructors(data);
@@ -16,6 +17,7 @@ const Instructors = () => {
     }, []);
     return (
        <div>
+        <Helmet><title>Snap School | Instructors</title></Helmet>
           <div className="md:h-80 h-20 mt-2 bg-cover" style={{
                 backgroundImage: 'url("https://images.unsplash.com/photo-1486574655068-162e94137442?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")'
             }}>

@@ -100,14 +100,17 @@ const Navbar = () => {
                     >
                         Classes
                     </NavLink>
-                    <NavLink
-                        to="/dashboard"
-                        className={({ isActive }) =>
-                            isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
-                        }
-                    >
-                        Dashboard
-                    </NavLink>
+                    {
+                        currentUser &&
+                        <NavLink
+                            to="/dashboard"
+                            className={({ isActive }) =>
+                                isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
+                            }
+                        >
+                            Dashboard
+                        </NavLink>
+                    }
                 </div>
                 <div className="hidden md:flex items-center ml-auto">
                     <div>
@@ -137,12 +140,15 @@ const Navbar = () => {
                             </NavLink>
                         )}
                     </div>
-                    <Link to="/dashboard">
-                        <button className=" inline-flex items-center mr-4">
-                            <FaCartPlus className=' text-2xl' />
-                            <div className="badge adge-error bg-orange-600 text-white">+{classCart?.length || 0}</div>
-                        </button>
-                    </Link>
+                    {
+                        currentUser &&
+                        <Link to="/dashboard">
+                            <button className=" inline-flex items-center mr-4">
+                                <FaCartPlus className=' text-2xl' />
+                                <div className="badge adge-error bg-orange-600 text-white">+{classCart?.length || 0}</div>
+                            </button>
+                        </Link>
+                    }
                     <Darkreader></Darkreader>
                 </div>
 
@@ -184,7 +190,7 @@ const Navbar = () => {
                                     Instructors
                                 </NavLink>
                             </div>
-                            <div>
+                            <div className=' mb-3'>
                                 <NavLink
                                     to="/classes"
                                     className={({ isActive }) =>
@@ -194,14 +200,18 @@ const Navbar = () => {
                                     Classes
                                 </NavLink>
                             </div>
-                            <NavLink
-                                to="/dashboard"
-                                className={({ isActive }) =>
-                                    isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
+                            <div className=' mb-3'>
+                                {
+                                    currentUser && <NavLink
+                                        to="/dashboard"
+                                        className={({ isActive }) =>
+                                            isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[19px] '
+                                        }
+                                    >
+                                        Dashboard
+                                    </NavLink>
                                 }
-                            >
-                                Dashboard
-                            </NavLink>
+                            </div>
                         </div>
                         <div className="flex gap-3 mt-4">
                             <div>
@@ -225,13 +235,15 @@ const Navbar = () => {
                                     )}
                                 </div>
                                 <div className=' md:mt-3 mb-3'>
-                                    <Link to='/dashboard'>
-                                        <button className=" inline-flex items-center md:mr-4">
-                                            <FaCartPlus className=' text-2xl' />
-                                            <div className="badge badge-secondary">+{classCart?.length || 0}</div>
-                                        </button>
-                                    </Link>
-                                    <div>
+                                    {
+                                        currentUser && <Link to='/dashboard'>
+                                            <button className=" inline-flex items-center md:mr-4">
+                                                <FaCartPlus className=' text-2xl' />
+                                                <div className="badge badge-secondary">+{classCart?.length || 0}</div>
+                                            </button>
+                                        </Link>
+                                    }
+                                    <div className=' mt-3'>
                                         <Darkreader></Darkreader>
                                     </div>
                                 </div>

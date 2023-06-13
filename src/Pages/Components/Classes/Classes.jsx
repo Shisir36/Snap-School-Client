@@ -15,7 +15,7 @@ const Classes = ({ classItem }) => {
         console.log(item);
         if (currentUser && currentUser.email) {
             const cartItem = { addedClassId: _id, name, image, price, availableSeats, instructor, email: currentUser.email }
-            fetch('http://localhost:5000/classesCart', {
+            fetch('https://snap-school-server-shisir36.vercel.app/classesCart', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -62,7 +62,7 @@ const Classes = ({ classItem }) => {
                 <h2 className="text-xl font-semibold mb-2">{name}</h2>
                 <p className="text-gray-600">Instructor: <span className=" font-bold">{instructor}</span></p>
                 <p className="text-gray-600">Available Seats: <span className="font-bold"> {availableSeats}</span></p>
-                <p className="text-white p-1 absolute top-5 bg-red-500 right-5"><span className=" font-bold">{price}$</span> </p>
+                <p className="text-white px-4 absolute top-5 bg-red-500 right-5"><span className=" font-bold">{price}$</span> </p>
                 <button onClick={() => handleClassAddToCart(classItem)}
                     disabled={availableSeats === 0}
                     className={`rounded-md bg-orange-500 text-white px-4 py-2 mt-4 ${availableSeats === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}

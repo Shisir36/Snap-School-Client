@@ -8,7 +8,7 @@ const useCart = () => {
         queryKey: ['classesCart', currentUser?.email],
         enabled:!loading,
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/classesCart?email=${currentUser?.email}`)
+            const res = await fetch(`https://snap-school-server-shisir36.vercel.app/classesCart?email=${currentUser?.email}`)
             return res.json();
         },
     })
