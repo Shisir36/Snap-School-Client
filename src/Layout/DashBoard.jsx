@@ -77,6 +77,9 @@ const DashBoard = () => {
                                 <li className=' mt-4'>
                                     <NavLink to= "/dashboard/myenrolledclasses"> <BsFillSuitHeartFill className=' text-xl text-red-600'></BsFillSuitHeartFill>My Enrolled Classes</NavLink>
                                 </li>
+                                <li className=' mt-4'>
+                                    <NavLink to= "/dashboard/paymenthistory"> <BsFillSuitHeartFill className=' text-xl text-red-600'></BsFillSuitHeartFill>Payment History</NavLink>
+                                </li>
                             </>}
                     <div className="divider"></div>
                     <li className=' mt-4'>

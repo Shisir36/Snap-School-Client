@@ -29,7 +29,7 @@ const PopularInstructors = () => {
     return (
         <div className="w-full mx-auto mb-7">
             <h1 className="text-2xl titles text-orange-500 font-bold mb-4 text-center">Our team</h1>
-            <p className="md:text-5xl titles text-4xl text-center font-bold mb-5">Meet Our Instructors</p>
+            <p className="md:text-5xl titles text-4xl text-center font-bold mb-5"> Our Popular Instructors</p>
             <hr className="w-1/2 mx-auto border-2 md:mb-14 mb-8" />
             <Carousel
                 showThumbs={false}

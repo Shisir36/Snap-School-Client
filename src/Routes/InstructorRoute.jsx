@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import useInstructor from "../Hooks/useInstructor";
 import { Authcontext } from "../Provider/AuthProvider";
+import useInstructor from "../Hooks/useInstructor";
 
 
 
 const InstructorRoute = ({ children }) => {
 
-    const { user, loading } = useContext(Authcontext);
+    const { currentUser, loading } = useContext(Authcontext);
     const [isInstructor, isInstructorLoading] = useInstructor();
     const location = useLocation();
 
@@ -16,7 +16,7 @@ const InstructorRoute = ({ children }) => {
             <span className="loading loading-bars loading-lg "></span>
         </div>
     }
-    if (user && isInstructor) {
+    if (currentUser && isInstructor) {
         return children;
     }
 

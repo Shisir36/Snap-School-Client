@@ -20,6 +20,7 @@ import Payment from "../Pages/DashBoard/Payment/Payment";
 import MyEnrolledClasses from "../Pages/DashBoard/Payment/MyEnrolledClasses";
 import InstructorRoute from "./InstructorRoute";
 import Instructors from "../Pages/Components/Instructors/Instructors";
+import PaymentHistory from "../Pages/DashBoard/Payment/PaymentHistory";
 
 
  export const router = createBrowserRouter([
@@ -61,6 +62,10 @@ import Instructors from "../Pages/Components/Instructors/Instructors";
          {
           path:"payment/:id",
           element:<Payment/>
+         },
+         {
+          path:"paymenthistory",
+          element:<PaymentHistory/>
          },
          {
           path:"addClass",
