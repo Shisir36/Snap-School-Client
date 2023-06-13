@@ -21,6 +21,7 @@ import MyEnrolledClasses from "../Pages/DashBoard/Payment/MyEnrolledClasses";
 import InstructorRoute from "./InstructorRoute";
 import Instructors from "../Pages/Components/Instructors/Instructors";
 import PaymentHistory from "../Pages/DashBoard/Payment/PaymentHistory";
+import StudentRoute from "./StudentRoute";
 
 
  export const router = createBrowserRouter([
@@ -57,15 +58,15 @@ import PaymentHistory from "../Pages/DashBoard/Payment/PaymentHistory";
       children:[
         {
           path:"selectedClass",
-          element:<SelectedClasses/>
+          element:<StudentRoute><SelectedClasses/></StudentRoute>
          },
          {
           path:"payment/:id",
-          element:<Payment/>
+          element:<StudentRoute><Payment/></StudentRoute>
          },
          {
           path:"paymenthistory",
-          element:<PaymentHistory/>
+          element:<StudentRoute><PaymentHistory/></StudentRoute>
          },
          {
           path:"addClass",
@@ -77,7 +78,7 @@ import PaymentHistory from "../Pages/DashBoard/Payment/PaymentHistory";
          },
          {
           path:"myenrolledclasses",
-          element:<MyEnrolledClasses/>
+          element:<StudentRoute><MyEnrolledClasses/></StudentRoute>
          },
          {
           path:"manageClass",

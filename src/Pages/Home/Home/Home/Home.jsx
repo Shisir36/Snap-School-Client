@@ -8,6 +8,7 @@ import Testimonials from '../Testimonials/Testimonials';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import { Helmet } from 'react-helmet-async';
 import PopularClasses from '../PopularClasses/PopularClasses';
+import JoinSchool from '../JoinSchool';
 
 const Home = () => {
     return (
@@ -20,9 +21,10 @@ const Home = () => {
             <PopularInstructors />
             <ProvideSection />
             <PopularClasses/>
-            <PhotoGallery />
             <WatchVideoSection />
             <Testimonials />
+            <PhotoGallery />
+            <JoinSchool/>
         </div>
     );
 };

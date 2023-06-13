@@ -9,8 +9,8 @@ const Classes = ({ classItem }) => {
     const { currentUser } = useContext(Authcontext)
     const navigate = useNavigate()
     const location = useLocation()
-    const [,refetch] = useCart()
-    const {name, price, instructor, image, availableSeats, _id } = classItem
+    const [, refetch] = useCart()
+    const { name, price, instructor, image, availableSeats, _id } = classItem
     const handleClassAddToCart = item => {
         console.log(item);
         if (currentUser && currentUser.email) {
@@ -55,15 +55,15 @@ const Classes = ({ classItem }) => {
     return (
         <div>
             <Helmet>
-                <title>Snap School | Classes</title>  
+                <title>Snap School | Classes</title>
             </Helmet>
-            <div className={`border rounded shadow-sm p-4 mb-4 ${availableSeats === 0 ? 'bg-red-100' : 'bg-white'}`}>
-                <img src={image} alt={name} className="w-full h-40 object-cover rounded mb-4" />
+            <div className={`border rounded relative shadow-sm p-4 mb-4 ${availableSeats === 0 ? 'bg-red-100' : 'bg-white'}`}>
+                <img src={image} alt={name} className="w-full  h-40 object-cover rounded mb-4" />
                 <h2 className="text-xl font-semibold mb-2">{name}</h2>
                 <p className="text-gray-600">Instructor: <span className=" font-bold">{instructor}</span></p>
                 <p className="text-gray-600">Available Seats: <span className="font-bold"> {availableSeats}</span></p>
-                <p className="text-gray-600">Price: <span className=" font-bold">{price}$</span> </p>
-                <button onClick={()=>handleClassAddToCart(classItem)}
+                <p className="text-white p-1 absolute top-5 bg-red-500 right-5"><span className=" font-bold">{price}$</span> </p>
+                <button onClick={() => handleClassAddToCart(classItem)}
                     disabled={availableSeats === 0}
                     className={`rounded-md bg-orange-500 text-white px-4 py-2 mt-4 ${availableSeats === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >

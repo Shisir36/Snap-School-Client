@@ -123,7 +123,7 @@ const Navbar = () => {
                     </div>
                     <div className="ml-5">
                         {currentUser ? (
-                            <button className="bg-red-500 font-extrabold text-white rounded-md py-2 px-3 mr-3" onClick={handleLogout}>
+                            <button className="bg-red-600 font-extrabold text-white rounded-md py-2 px-2 mr-3" onClick={handleLogout}>
                                 <FaSignOutAlt></FaSignOutAlt>
                             </button>
                         ) : (
@@ -137,11 +137,11 @@ const Navbar = () => {
                             </NavLink>
                         )}
                     </div>
-                    <Link to = "/dashboard">
-                    <button className=" inline-flex items-center mr-4">
-                        <FaCartPlus className=' text-2xl' />
-                        <div className="badge badge-secondary">+{classCart?.length || 0}</div>
-                    </button>
+                    <Link to="/dashboard">
+                        <button className=" inline-flex items-center mr-4">
+                            <FaCartPlus className=' text-2xl' />
+                            <div className="badge adge-error bg-orange-600 text-white">+{classCart?.length || 0}</div>
+                        </button>
                     </Link>
                     <Darkreader></Darkreader>
                 </div>
@@ -194,6 +194,14 @@ const Navbar = () => {
                                     Classes
                                 </NavLink>
                             </div>
+                            <NavLink
+                                to="/dashboard"
+                                className={({ isActive }) =>
+                                    isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
+                                }
+                            >
+                                Dashboard
+                            </NavLink>
                         </div>
                         <div className="flex gap-3 mt-4">
                             <div>
@@ -218,13 +226,13 @@ const Navbar = () => {
                                 </div>
                                 <div className=' md:mt-3 mb-3'>
                                     <Link to='/dashboard'>
-                                    <button className=" inline-flex items-center md:mr-4">
-                                        <FaCartPlus className=' text-2xl' />
-                                        <div className="badge badge-secondary">+{classCart?.length || 0}</div>
-                                    </button>
+                                        <button className=" inline-flex items-center md:mr-4">
+                                            <FaCartPlus className=' text-2xl' />
+                                            <div className="badge badge-secondary">+{classCart?.length || 0}</div>
+                                        </button>
                                     </Link>
                                     <div>
-                                    <Darkreader></Darkreader>
+                                        <Darkreader></Darkreader>
                                     </div>
                                 </div>
                             </div>

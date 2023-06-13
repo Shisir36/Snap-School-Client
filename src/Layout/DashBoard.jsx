@@ -1,16 +1,18 @@
 import React, { useContext, useState } from 'react';
-import { FaBookmark, FaCamera, FaCheckSquare,  FaHome, } from 'react-icons/fa';
-import { BsFillBookmarkCheckFill, BsFillSuitHeartFill} from "react-icons/bs";
+import { FaCamera, FaCartPlus, FaCheckSquare, FaHome, FaPlusCircle, } from 'react-icons/fa';
+import { BsCash, BsFillBookmarkCheckFill, BsFillSuitHeartFill } from "react-icons/bs";
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
 import useInstructor from '../Hooks/useInstructor';
 import { Authcontext } from '../Provider/AuthProvider';
+import useCart from '../Hooks/classCart';
 
 const DashBoard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-    const {currentUser} = useContext(Authcontext)
+    const { currentUser } = useContext(Authcontext)
+    const [classCart] = useCart()
 
     return (
 
@@ -29,13 +31,13 @@ const DashBoard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full text-base-content">
                     {/* Sidebar content here */}
-                    
+
                     {isAdmin ? (<>
                         <div className=' mx-auto text-center'>
-                          <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
-                          <h2 className='text-xl'>{currentUser.displayName}</h2>
-                        <h2 className=' text-3xl font-bold'>Admin</h2>
-                          </div>
+                            <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
+                            <h2 className='text-xl'>{currentUser.displayName}</h2>
+                            <h2 className=' text-3xl font-bold'>Admin</h2>
+                        </div>
                         <div className="divider"></div>
                         <li className=' mt-4'>
                             <NavLink to="/dashboard/manageClass"> <FaCheckSquare></FaCheckSquare>ManageClass</NavLink>
@@ -47,38 +49,43 @@ const DashBoard = () => {
 
 
                         : isInstructor ? <>
-                        <div className=' mx-auto text-center'>
-                          <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
-                          <h2 className='text-xl'>{currentUser.displayName}</h2>
-                        <h2 className=' text-3xl font-bold'>Instructor</h2>
-                          </div>
-                        <div className="divider"></div>
-                        
-                         <li className=' mt-4'>
-                            <NavLink to="/dashboard/addClass"> <FaBookmark></FaBookmark>Add Class</NavLink>
-                        </li>
-                        <li className=' mt-4'>
-                            <NavLink to="/dashboard/myClasses"> <FaCamera></FaCamera>My Classes</NavLink>
-                        </li>
-                        
-                         </>
+                            <div className=' mx-auto text-center'>
+                                <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
+                                <h2 className='text-xl'>{currentUser.displayName}</h2>
+                                <h2 className=' text-3xl font-bold'>Instructor</h2>
+                            </div>
+                            <div className="divider"></div>
+
+                            <li className=' mt-4'>
+                                <NavLink to="/dashboard/addClass"> <FaPlusCircle ></FaPlusCircle >Add Class</NavLink>
+                            </li>
+                            <li className=' mt-4'>
+                                <NavLink to="/dashboard/myClasses"> <FaCamera></FaCamera>My Classes</NavLink>
+                            </li>
+
+                        </>
 
 
                             : <>
-                          <div className=' mx-auto text-center'>
-                          <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
-                          <h2 className='text-xl'>{currentUser.displayName}</h2>
-                         <h2 className=' text-3xl font-bold'>Student</h2>
-                          </div>
-                        <div className="divider"></div>
+                                <div className=' mx-auto text-center'>
+                                    <img className=' h-16 w-16 rounded-full ml-5' src={currentUser.photoURL} alt="" />
+                                    <h2 className='text-xl'>{currentUser.displayName}</h2>
+                                    <h2 className=' text-3xl font-bold'>Student</h2>
+                                </div>
+                                <div className="divider"></div>
                                 <li>
-                                    <NavLink to="/dashboard/selectedClass"><BsFillBookmarkCheckFill className=' text-green-500'></BsFillBookmarkCheckFill>My Selected  Classes</NavLink>
+                                    <NavLink to="/dashboard/selectedClass">
+                                    <button className=" inline-flex items-center ">
+                                        <FaCartPlus className=' text-2xl' />
+                                        <div className="badge  badge-warning">+{classCart?.length || 0}</div>
+                                    </button>
+                                    </NavLink>
                                 </li>
                                 <li className=' mt-4'>
-                                    <NavLink to= "/dashboard/myenrolledclasses"> <BsFillSuitHeartFill className=' text-xl text-red-600'></BsFillSuitHeartFill>My Enrolled Classes</NavLink>
+                                    <NavLink to="/dashboard/myenrolledclasses"> <BsFillSuitHeartFill className=' text-xl text-red-600'></BsFillSuitHeartFill>My Enrolled Classes</NavLink>
                                 </li>
                                 <li className=' mt-4'>
-                                    <NavLink to= "/dashboard/paymenthistory"> <BsFillSuitHeartFill className=' text-xl text-red-600'></BsFillSuitHeartFill>Payment History</NavLink>
+                                    <NavLink to="/dashboard/paymenthistory"> <BsCash className=' text-xl text-green-500'></BsCash>Payment History</NavLink>
                                 </li>
                             </>}
                     <div className="divider"></div>
