@@ -15,7 +15,7 @@ const Classes = ({ classItem }) => {
         console.log(item);
         if (currentUser && currentUser.email) {
             const cartItem = { addedClassId: _id, name, image, price, availableSeats, instructor, email: currentUser.email }
-            fetch('https://snap-school-server-shisir36.vercel.app/classesCart', {
+            fetch('http://localhost:5000/classesCart', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -25,7 +25,7 @@ const AddClass = () => {
             totalEnrolledStudents: 0,
         };
 
-        fetch('https://snap-school-server-shisir36.vercel.app/classes', {
+        fetch('http://localhost:5000/classes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

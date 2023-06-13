@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { FaCamera, FaCheckSquare, FaCriticalRole, FaHome, FaUser } from 'react-icons/fa';
+import { FaBookmark, FaCamera, FaCheckSquare,  FaHome, } from 'react-icons/fa';
+import { BsFillBookmarkCheckFill, BsFillSuitHeartFill} from "react-icons/bs";
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
@@ -54,10 +55,10 @@ const DashBoard = () => {
                         <div className="divider"></div>
                         
                          <li className=' mt-4'>
-                            <NavLink to="/dashboard/addClass"> <FaCriticalRole></FaCriticalRole>Add Class</NavLink>
+                            <NavLink to="/dashboard/addClass"> <FaBookmark></FaBookmark>Add Class</NavLink>
                         </li>
                         <li className=' mt-4'>
-                            <NavLink to="/dashboard/myClasses"> <FaCriticalRole></FaCriticalRole>My Classes</NavLink>
+                            <NavLink to="/dashboard/myClasses"> <FaCamera></FaCamera>My Classes</NavLink>
                         </li>
                         
                          </>
@@ -71,10 +72,10 @@ const DashBoard = () => {
                           </div>
                         <div className="divider"></div>
                                 <li>
-                                    <NavLink to="/dashboard/selectedClass"><FaUser />My Selected  Classes</NavLink>
+                                    <NavLink to="/dashboard/selectedClass"><BsFillBookmarkCheckFill className=' text-green-500'></BsFillBookmarkCheckFill>My Selected  Classes</NavLink>
                                 </li>
                                 <li className=' mt-4'>
-                                    <NavLink to= "/dashboard/myenrolledclasses"> <FaCheckSquare></FaCheckSquare>My Enrolled Classes</NavLink>
+                                    <NavLink to= "/dashboard/myenrolledclasses"> <BsFillSuitHeartFill className=' text-xl text-red-600'></BsFillSuitHeartFill>My Enrolled Classes</NavLink>
                                 </li>
                             </>}
                     <div className="divider"></div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Instructors = () => {
     const [instructors, setAllInstructors] = useState([]);
-
     useEffect(() => {
-        fetch('https://snap-school-server-shisir36.vercel.app/users/instructors')
+        fetch('http://localhost:5000/users/instructors')
             .then((response) => response.json())
             .then((data) => {
                 setAllInstructors(data);
@@ -14,12 +15,18 @@ const Instructors = () => {
             });
     }, []);
     return (
-        <div className=' grid grid-cols-3'>
+       <div>
+          <div className="md:h-80 h-20 mt-2 bg-cover" style={{
+                backgroundImage: 'url("https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")'
+            }}>
+                <span className="titles md:text-6xl text-4xl text-white md:absolute md:right-[35%] md:top-36 ml-20 text-center">Our <span>InsTructors</span></span>
+            </div>
+         <div className=' md:grid grid-cols-3 py-10 gap-6'>
             {
                 instructors.map(instructor => (  
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card md:w-96 w-80 bg-base-100 shadow-xl ml-5 mb-3">
                 <figure className="px-10 pt-10">
-                    <img src={instructor.image} alt="Shoes" className="rounded-xl" />
+                    <img src={instructor.image} alt="Shoes" className="rounded-xl h-48 w-48" />
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{instructor.name}</h2>
@@ -29,6 +36,7 @@ const Instructors = () => {
             }
           
         </div>
+       </div>
     );
 };
 

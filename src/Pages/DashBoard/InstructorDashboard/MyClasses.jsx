@@ -8,7 +8,7 @@ const MyClasses = () => {
     const { currentUser } = useContext(Authcontext)
 
     useEffect(() => {
-        fetch(`https://snap-school-server-shisir36.vercel.app/myClasses/?email=${currentUser.email}`)
+        fetch(`http://localhost:5000/myClasses/?email=${currentUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyClasses(data)

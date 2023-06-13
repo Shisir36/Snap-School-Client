@@ -5,7 +5,7 @@ const PopularClasses = () => {
     const [popularClasses, setPopularClasses] = useState([]);
 
     useEffect(() => {
-        fetch("https://snap-school-server-shisir36.vercel.app/classes/enrollment")
+        fetch("http://localhost:5000/classes/enrollment")
             .then(res => res.json())
             .then(data => {
                 console.log(data);

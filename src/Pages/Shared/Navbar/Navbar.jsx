@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 py-3 flex items-center justify-between " >
                 <NavLink to="/" className=" flex items-center gap-0">
                     <img src={wbLogo} alt="" className="md:h-12 md:w-12 h-9 w-9" />
-                    <h1 className='titles font-extrabold md:text-4xl text-3xl'>Snap School</h1>
+                    <h1 className='titles font-extrabold md:text-4xl text-3xl'>Snap <span className=' text-orange-500'> School</span></h1>
                 </NavLink>
                 {/* Mobile Nav */}
                 <div className="md:hidden">

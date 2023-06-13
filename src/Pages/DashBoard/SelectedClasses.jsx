@@ -17,7 +17,7 @@ const SelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`https://snap-school-server-shisir36.vercel.app/classesCart/${item._id}`, {
+              fetch(`http://localhost:5000/classesCart/${item._id}`, {
                 method: "DELETE"
               })
               .then(res => res.json())
