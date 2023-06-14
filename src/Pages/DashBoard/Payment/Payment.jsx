@@ -12,7 +12,7 @@ const Payment = () => {
     const [payment, setPayment] = useState([])
     const {id} = useParams()
     useEffect(()=>{
-       fetch(`https://snap-school-server-shisir36.vercel.app/myClassCart/${id}`)
+       fetch(`http://localhost:5000/myClassCart/${id}`)
        .then(res => res.json())
        .then(data => {
         console.log(data);

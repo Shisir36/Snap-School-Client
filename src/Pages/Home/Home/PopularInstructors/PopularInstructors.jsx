@@ -6,7 +6,7 @@ const PopularInstructors = () => {
     const [instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        fetch('https://snap-school-server-shisir36.vercel.app/users/instructors')
+        fetch('http://localhost:5000/users/instructors')
             .then((response) => response.json())
             .then((data) => {
                 setInstructors(data.slice(0, 6));
@@ -32,8 +32,8 @@ const PopularInstructors = () => {
             <p className="md:text-5xl titles text-4xl text-center font-bold mb-5"> Our Popular Instructors</p>
             <hr className="w-1/2 mx-auto border-2 md:mb-14 mb-8" />
             <Carousel
-                showThumbs={false}
-                showArrows={false}
+                showThumbs={true}
+                showArrows={true}
                 autoPlay
                 infiniteLoop
                 interval={5000}

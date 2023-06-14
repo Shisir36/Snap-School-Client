@@ -6,8 +6,8 @@ const About = () => {
             <div className="relative w-full">
                 <img src="https://images.unsplash.com/photo-1667567469453-878cdf593c9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Big Photo" className="mb-4 md:ml-20 h-[500px] md:w-[40%] rounded-lg" />
                 <img src="https://images.unsplash.com/photo-1543824387-b7359a9e1354?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Small Photo" className="absolute top-[10%] left-[42%] h-[70%] w-[28%] rounded-lg md:block hidden" />
-                <div className="bg-orange-600 text-white md:rounded-lg rounded-md px-1 text-center md:py-10 py-8 absolute bottom-0 md:left-72 left-32 md:w-1/5 ">
-                    <p className="text-3xl "><span className=' text-yellow-300 font-extrabold'>16</span> Years of Experience</p>
+                <div className="bg-orange-600 text-white md:rounded-lg rounded-md px-1 text-center md:py-10 py-10 absolute md:bottom-0 bottom-14 md:left-72 left-44 md:w-1/5 w-[50%] ">
+                    <p className="text-3xl "><span className=' text-yellow-300 font-extrabold text-6xl'>16</span><br /> Years of Experience</p>
                 </div>
             </div>
             <div className="md:w-1/2 text-center md:text-left md:mt-0 mt-10">

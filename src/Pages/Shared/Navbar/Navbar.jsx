@@ -131,7 +131,7 @@ const Navbar = () => {
                             </button>
                         ) : (
                             <NavLink
-                                to="/signUp"
+                                to="/login"
                                 className={({ isActive }) =>
                                     isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold text-[23px] '
                                 }
@@ -225,7 +225,7 @@ const Navbar = () => {
                                         </button>
                                     ) : (
                                         <NavLink
-                                            to="/signUp"
+                                            to="/login"
                                             className={({ isActive }) =>
                                                 isActive ? 'text-orange-500 font-extrabold md:text-[23px] text-[19px]' : 'text-gray-800 font-semibold md:text-[23px] text-[19px]'
                                             }
