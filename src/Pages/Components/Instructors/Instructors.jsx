@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 
 const Instructors = () => {
     const [instructors, setAllInstructors] = useState([]);
-    const [cardColor, setCardColor] = useState('orange');
+    const [cardColor, setCardColor] = useState('white');
 
     useEffect(() => {
         fetch('http://localhost:5000/users/instructors')
@@ -28,8 +28,8 @@ const Instructors = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCardColor((prevColor) => (prevColor === 'black' ? 'white' : 'black'));
-        }, 2000);
+            setCardColor((prevColor) => (prevColor === 'rgba(0, 0, 0, 0.15)' ? 'white' : 'rgba(0, 0, 0, 0.15)'));
+        }, 3000);
 
         return () => clearInterval(interval);
     }, []);

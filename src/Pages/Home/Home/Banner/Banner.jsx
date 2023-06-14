@@ -32,9 +32,11 @@ const Banner = () => {
                             <FaArrowRight className="ml-1" />
                         </button>
                         </Link>
-                        <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12 py-5 px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
+                       <Link to="/readmore">
+                       <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12 py-5 px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
                             <span>Read More</span> <FaArrowRight />
                         </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -51,9 +53,11 @@ const Banner = () => {
                             <span>Sign Up</span> <FaArrowRight />
                         </button>
                         </Link>
-                        <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12 py-5 px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
+                     <Link to="/readmore">
+                     <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12 py-5 px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
                             <span>Read More</span> <FaArrowRight />
                         </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -70,9 +74,12 @@ const Banner = () => {
                             <span>Sign Up</span> <FaArrowRight />
                         </button>                      
                         </Link>
-                        <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12 py-5 px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
+                      <Link to="/readmore">
+                      <button className="readmore-button bg-gray-900 text-white font-semibold md:px-12 py-5 px-8 rounded-full inline-flex items-center space-x-1 hover:bg-white hover:text-gray-900 transition duration-500 ease-in-out">
                             <span>Read More</span> <FaArrowRight />
                         </button>
+                      
+                      </Link>
                     </div>
                 </div>
                 <img className="w-full md:h-[800px] h-[550px]" src={bannerImage3} alt="Slide 3" />

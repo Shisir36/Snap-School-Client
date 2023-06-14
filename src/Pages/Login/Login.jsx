@@ -91,12 +91,13 @@ const Login = () => {
                             </div>
                             <input type="submit" value="Login" className="lbtn solid hover:bg-blue-500" />
                             <p className="social-text">Or Sign in with social platforms</p>
-                            <div className="social-media">
+                            
+                        </form>
+                        <div className="social-media">
                                 <button onClick={handleGoogleLogin} className="social-icon">
                                     <FaGoogle />
                                 </button>
                             </div>
-                        </form>
                     </div>
                 </div>
 

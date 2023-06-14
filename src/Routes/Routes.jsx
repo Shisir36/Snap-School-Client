@@ -22,6 +22,7 @@ import InstructorRoute from "./InstructorRoute";
 import Instructors from "../Pages/Components/Instructors/Instructors";
 import PaymentHistory from "../Pages/DashBoard/Payment/PaymentHistory";
 import StudentRoute from "./StudentRoute";
+import Readmore from "../Pages/Readmore/Readmore";
 
 
  export const router = createBrowserRouter([
@@ -33,6 +34,10 @@ import StudentRoute from "./StudentRoute";
           {
           path:"/",
           element:<Home/>
+        },
+        {
+          path:"/readmore",
+          element:<Readmore/>
         },
         {
           path:"/instructors",
