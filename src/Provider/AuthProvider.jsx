@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         setCurrentUser(user);
         if(user){
-          axios.post('http://localhost:5000/jwt', {email: user.email})
+          axios.post('https://snap-school-server.vercel.app/jwt', {email: user.email})
           .then(data =>{
               console.log(data)
               localStorage.setItem('access-token', data.data.token)

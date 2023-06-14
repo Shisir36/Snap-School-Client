@@ -35,7 +35,7 @@ const ProvideSection = () => {
                     Video Lessons <br />
                     by Zoom
                 </h2>
-                <div className="md:flex  md:mt-0 mt-10 md:gap-3 md:ml-0 ml-20">
+                <div className="md:flex  md:mt-0 mt-10 md:gap-3 md:ml-0 ml-28">
                     <button className="bg-orange-600 hover:bg-black text-gray-50 font-semibold md:px-14 px-10 py-4 rounded-full flex items-center space-x-1 " data-aos="fade-up">
                         <span>Read More</span>
                         <FaArrowRight />

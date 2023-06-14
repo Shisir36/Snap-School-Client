@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaShare, FaShareAlt } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -6,7 +7,7 @@ const PopularInstructors = () => {
     const [instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users/instructors')
+        fetch('https://snap-school-server.vercel.app/users/instructors')
             .then((response) => response.json())
             .then((data) => {
                 setInstructors(data.slice(0, 6));
@@ -36,7 +37,7 @@ const PopularInstructors = () => {
                 showArrows={true}
                 autoPlay
                 infiniteLoop
-                interval={5000}
+                interval={8000}
                 className="relative"
                 style={{ maxWidth: '1000px' }}
                 renderIndicator={() => null}
@@ -45,15 +46,18 @@ const PopularInstructors = () => {
                     <div key={index} className="flex justify-center md:gap-20">
                         {group.map((instructor) => (
                             <div key={instructor.id} className="mx-4">
-                                <div className="rounded-full w-[112px] h-[112px] md:w-60 md:h-60 lg:w-72 lg:h-72 xl:w-60 xl:h-60 mx-auto">
+                                <div className="rounded-full w-[112px] h-[112px] md:w-72 md:h-72 lg:w-72 lg:h-72 xl:w-60 xl:h-60 mx-auto relative">
                                     <img
                                         src={instructor.image}
                                         alt={instructor.name}
-                                        className="object-cover w-full h-full transition-transform transform hover:scale-105 rounded-full"
+                                        className="object-cover w-full h-full transition-transform  transform hover:scale-105 rounded-full"
                                         style={{ border: '4px solid orange' }}
                                     />
+                                    <div >
+                                    <FaShareAlt className=' absolute top-4 md:right-3 right-0 bg-orange-600 w-6 h-6 md:w-12 md:h-12 rounded-full md:p-4 p-2 text-white '/>
+                                    </div>
                                 </div>
-                                <p className="text-center mt-2 font-bold">{instructor.name}</p>
+                                <p className="text-center mt-2 text-lg font-bold">{instructor.name}</p>
                             </div>
                         ))}
                     </div>

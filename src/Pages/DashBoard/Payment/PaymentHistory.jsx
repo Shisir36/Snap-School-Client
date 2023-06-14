@@ -6,7 +6,7 @@ const PaymentHistory = () => {
     const { currentUser } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/payments?email=${currentUser.email}`)
+        fetch(`https://snap-school-server.vercel.app/payments?email=${currentUser.email}`)
             .then(response => response.json())
             .then(data => {
                 setPaymentHistory(data.paymentHistory);

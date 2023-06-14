@@ -36,7 +36,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL, role: "student" };
-                fetch('http://localhost:5000/users', {
+                fetch('https://snap-school-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

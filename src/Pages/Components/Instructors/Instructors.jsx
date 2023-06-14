@@ -8,7 +8,7 @@ const Instructors = () => {
     const [cardColor, setCardColor] = useState('white');
 
     useEffect(() => {
-        fetch('http://localhost:5000/users/instructors')
+        fetch('https://snap-school-server.vercel.app/users/instructors')
             .then((response) => response.json())
             .then((data) => {
                 setAllInstructors(data);

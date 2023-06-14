@@ -25,7 +25,7 @@ const Classes = ({ classItem }) => {
                 instructor,
                 email: currentUser.email,
             };
-            fetch("http://localhost:5000/classesCart", {
+            fetch("https://snap-school-server.vercel.app/classesCart", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
